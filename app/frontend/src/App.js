@@ -8,6 +8,7 @@ import { SkillsMarquee } from "@/components/skills/SkillsMarquee";
 import { Projects } from "@/components/projects/Projects";
 import { GameSection } from "@/components/game/GameSection";
 import { Contact } from "@/components/contact/Contact";
+import { ChatWidget } from "@/components/chat/ChatWidget";
 
 function App() {
   useLenis();
@@ -24,6 +25,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      <ChatWidget />
       <Toaster theme="dark" position="bottom-right" />
     </div>
   );
