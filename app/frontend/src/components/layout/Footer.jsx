@@ -13,7 +13,7 @@ export const Footer = () => (
       </div>
       <div className="flex flex-wrap gap-6">
         {PROFILE.socials.map((s) => (
-          <a key={s.label} href={s.href} target="_blank" rel="noreferrer" className="text-sm text-zinc-300 transition-colors hover:text-[var(--cyan)]" data-testid={`footer-social-${s.label.split(" ​")[0].toLowerCase()}`}>
+          <a key={s.label} href={s.href} target="_blank" rel="noreferrer" className="text-sm text-zinc-300 transition-colors hover:text-[var(--cyan)]" data-testid={`footer-social-${s.label.split(" "מר)[0].toLowerCase()}`}>
             {s.label}
           </a>
         ))}
