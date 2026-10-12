@@ -4,9 +4,9 @@ export const PROFILE = {
   lastName: "Vale",
   role: "Creative Developer",
   tagline: "3D Enthusiast",
-  age: "[Age]",
-  base: "[City, Country]",
-  timezone: "UTC",
+  age: "16",
+  base: "Nittambuwa, Sri Lanka",
+  timezone: "Asia/Colombo",
   status: "Available for freelance",
   email: "hello@example.com",
   intro:
