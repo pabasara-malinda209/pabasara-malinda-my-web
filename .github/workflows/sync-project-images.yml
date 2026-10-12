@@ -1,0 +1,35 @@
+name: Sync project images
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download original project images
+        run: |
+          set -e
+          mkdir -p public/images/projects
+          base="https://modular-portfolio-2.preview.static.emergentagent.com/images/projects"
+          for n in aether velocity zenith symphony; do
+            curl -fsSL --retry 3 -o "public/images/projects/$n.jpg" "$base/$n.jpg"
+          done
+          ls -l public/images/projects
+
+      - name: Commit images
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/images/projects
+          if git diff --cached --quiet; then
+            echo "nothing to commit"
+          else
+            git commit -m "chore: add original project images"
+            git push origin HEAD:main
+          fi
