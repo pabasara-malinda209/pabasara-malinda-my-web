@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --bg: #07090e;
+        --bg2: #0d111a;
+        --surface: #131924;
+        --line: rgba(255, 255, 255, 0.08);
+        --cyan: #00f0ff;
+        --violet: #7000ff;
+        --amber: #ffb800;
+        --mint: #00ff9d;
+        --text: #f1f5f9;
+        --muted: #94a3b8;
+
+        --background: 222 33% 4%;
+        --foreground: 210 40% 96%;
+        --card: 220 30% 8%;
+        --card-foreground: 210 40% 96%;
+        --popover: 220 30% 8%;
+        --popover-foreground: 210 40% 96%;
+        --primary: 184 100% 50%;
+        --primary-foreground: 222 33% 4%;
+        --secondary: 220 25% 14%;
+        --secondary-foreground: 210 40% 96%;
+        --muted: 220 25% 14%;
+        --muted-foreground: 215 20% 65%;
+        --accent: 220 25% 14%;
+        --accent-foreground: 210 40% 96%;
+        --destructive: 350 89% 60%;
+        --destructive-foreground: 210 40% 96%;
+        --border: 0 0% 100% / 0.08;
+        --input: 0 0% 100% / 0.1;
+        --ring: 184 100% 50%;
+        --radius: 0.75rem;
+    }
+    * {
+        @apply border-border;
+    }
+    html {
+        background: var(--bg);
+    }
+    body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: "Plus Jakarta Sans", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    ::selection {
+        background: var(--cyan);
+        color: #000;
+    }
+}
+
+html.lenis,
+html.lenis body {
+    height: auto;
+}
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+.font-display {
+    font-family: "Cabinet Grotesk", sans-serif;
+}
+.font-mono {
+    font-family: "JetBrains Mono", monospace;
+}
+
+.grain {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 70;
+    opacity: 0.06;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.text-outline {
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(241, 245, 249, 0.6);
+}
+.text-gradient {
+    background: linear-gradient(100deg, #f1f5f9 10%, var(--cyan) 55%, #a78bfa 95%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero-glow {
+    background:
+        radial-gradient(60% 50% at 70% 35%, rgba(0, 240, 255, 0.1), transparent 70%),
+        radial-gradient(40% 40% at 20% 80%, rgba(112, 0, 255, 0.12), transparent 70%);
+}
+.grid-lines {
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    background-size: 88px 88px;
+}
+
+.marquee-track {
+    animation: marquee 80s linear infinite;
+}
+.marquee:hover .marquee-track {
+    animation-play-state: paused;
+}
+@keyframes marquee {
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.spotlight {
+    position: relative;
+}
+.spotlight::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgba(0, 240, 255, 0.16), transparent 45%);
+}
+.spotlight:hover::before {
+    opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+        animation: none;
+    }
+}

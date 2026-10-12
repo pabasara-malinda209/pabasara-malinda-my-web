@@ -1,0 +1,43 @@
+// Placeholder projects: replace titles, copy, images and links with your own work.
+export const PROJECTS = [
+  {
+    id: "aether",
+    index: "01",
+    title: "Aether Engine",
+    kind: "Real-time shader playground",
+    stack: ["Three.js", "GLSL", "React"],
+    image: "/images/projects/aether.jpg",
+    href: "#",
+    span: "md:col-span-7",
+  },
+  {
+    id: "velocity",
+    index: "02",
+    title: "Velocity",
+    kind: "WebGL racing concept",
+    stack: ["WebGL", "Physics", "Vite"],
+    image: "/images/projects/velocity.jpg",
+    href: "#",
+    span: "md:col-span-5",
+  },
+  {
+    id: "zenith",
+    index: "03",
+    title: "Zenith",
+    kind: "Spatial analytics dashboard",
+    stack: ["Next.js", "Three.js", "Node.js"],
+    image: "/images/projects/zenith.jpg",
+    href: "#",
+    span: "md:col-span-5",
+  },
+  {
+    id: "symphony",
+    index: "04",
+    title: "Symphony",
+    kind: "Audio-reactive visualiser",
+    stack: ["Web Audio", "Canvas", "Motion"],
+    image: "/images/projects/symphony.jpg",
+    href: "#",
+    span: "md:col-span-7",
+  },
+];
