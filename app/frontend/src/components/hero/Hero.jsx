@@ -27,10 +27,10 @@ export const Hero = () => {
       <motion.div style={{ y: sceneY }} className="absolute inset-0">
         <HeroScene />
       </motion.div>
-      <motion.div style={{ y, opacity }} className="relative z-10 flex min-h-[100svh] flex-col justify-end px-5 pb-10 pt-32 sm:px-10 lg:px-16">
+    <motion.div style={{ y, opacity }} className="relative z-10 flex min-h-[100svh] flex-col justify-end px-5 pb-10 pt-32 sm:px-10 lg:px-16">
         <motion.div {...fade(0.9)} className="mb-6 flex flex-wrap items-center gap-3 font-mono text-[11px] uppercase tracking-[0.18em] text-zinc-300 sm:text-xs sm:tracking-[0.25em]">
           <span className="rounded-full border border-white/15 bg-white/5 px-3 py-1.5 backdrop-blur" data-testid="hero-role-badge">
-            {PROFILE.role} • {PROFILE.tagline}
+            {PROFILE.role} •, {PROFILE.tagline}
           </span>
           <span className="flex items-center gap-2 text-[var(--mint)]">
             <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[var(--mint)]" />
@@ -38,10 +38,12 @@ export const Hero = () => {
           </span>
         </motion.div>
         <MaskedTitle
-          lines={[
-            { text: PROFILE.firstName },
+          lines={
+            [
+            { text: `${PROFILE.title} ${PROFILE.firstName}` },
             { text: PROFILE.lastName, indent: true, className: "text-gradient" },
-          ]}
+          ]
+          }
         />
         <div className="mt-10 flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
           <motion.p {...fade(1.05)} className="max-w-md text-base leading-relaxed text-zinc-300 sm:text-lg" data-testid="hero-intro">
@@ -59,7 +61,7 @@ export const Hero = () => {
             </span>
           </motion.button>
         </div>
-      </motion.div>
+    </motion.div>
     </section>
   );
 };

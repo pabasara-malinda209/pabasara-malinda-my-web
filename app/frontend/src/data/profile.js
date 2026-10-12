@@ -1,5 +1,6 @@
 // Placeholder content: swap these values for your own details.
 export const PROFILE = {
+  title: "Mr",
   firstName: "Pabasara",
   lastName: "Malinda",
   role: "Creative Developer",
