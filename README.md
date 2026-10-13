@@ -1,7 +1,6 @@
 # Modular Portfolio 2 — public client-side source capture
 
-Source URL:capture
-
+Source URL:https://pabasaramalinda.netlify.app/
 Captured: 2026-10-12T05:11:37+00:00 (UTC)  
 
 ## What is included
